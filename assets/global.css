@@ -2,8 +2,10 @@
 
 
 body {
+    
     padding: 0px;
-    margin: 0px
+    margin: 0px;
+    background-color: rgb(2, 2, 32)
 }
 
 nav {
@@ -16,6 +18,7 @@ nav {
     height: 6vh;
 }
 
+
 header {
     display: flex;
     flex-direction: column;
@@ -24,10 +27,11 @@ header {
     text-align: center;
     color: white;
     height: 70vh;
-
-    background: linear-gradient(135deg, rgb(19, 13, 66), rgb(19, 2, 36), rgb(43, 12, 44));
+    position: relative;
+    margin-bottom: 0px;
+    background: linear-gradient(135deg, rgb(28, 20, 90), rgb(19, 2, 36), rgb(43, 12, 44));
     background-size: 300%;
-    animation: bg-animation 7s ease infinite;
+    animation: bg-animation 5s ease infinite;
 }
 
 @keyframes bg-animation {
@@ -40,6 +44,57 @@ header {
     100% {
         background-position: 10%;
     }
+}
+
+header::before {
+    content: "";
+    background: linear-gradient( rgba(2, 2, 32, 0), rgb(2, 2, 32));
+    width: 100vw;
+    height: 27vh;
+    position: absolute;
+    object-fit: cover;
+    margin-top: 535px;
+}
+
+.logos {
+    display: flex;
+}
+
+.logos .logo-hbo {
+    height: 4rem;
+    width: 5rem;
+    background-image: url(img/logos/hbo.png);
+}
+
+.logos .logo-dc {
+    height: 4rem;
+    width: 5rem;
+    background-image: url(img/logos/dc.png);
+}
+
+.logos .logo-wb {
+    height: 4rem;
+    width: 5rem;
+    background-image: url(img/logos/wb.png);
+}
+
+.logos .logo-cn {
+    height: 4rem;
+    width: 5rem;
+    background-image: url(img/logos/cn.png);
+}
+
+.logos .logo-max {
+    height: 4rem;
+    width: 5rem;
+    background-image: url(img/logos/max.png);
+}
+
+.logo-hbo, .logo-dc, .logo-wb, .logo-cn, .logo-max {
+    margin: 20px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center ;
 }
 
 header h1 {
@@ -56,14 +111,14 @@ header h3 {
 
 .divisor {
     background: linear-gradient(135deg, rgb(44, 33, 131), rgb(97, 17, 100));
-    width: 70%;
+    width: 70vw;
     height: 6px;
     max-width: 450px;
 }
 
 header .preco h2 {
     display: inline-block;
-    width: 300px;
+    width: 300vw;
     margin-top: 0;
 }
 
@@ -112,4 +167,219 @@ header .preco h2 {
     55% {
         transform: rotate(0deg);
     }
+}
+
+#titulo-planos {
+    color: aliceblue;
+    text-align: center;
+}
+
+.planos {
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    perspective-origin: 50% 0%;
+    perspective: 1000px;
+    margin-bottom: 80px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px 30px;
+    width: 570px;
+    height: 620px;
+    background: linear-gradient( rgba(108, 31, 160, 0.5), rgba(98, 31, 160, .03));
+    border-radius: 15px;
+    transition: 1s ease-in-out;
+}
+
+.planos:has(.card:nth-child(1):hover) .card:nth-child(2) {
+    transform: rotateY(-35deg);
+}
+
+.planos:has(.card:nth-child(2):hover) .card:nth-child(1) {
+    transform: rotateY(35deg);
+}
+
+.grade {
+    height: 100vh;
+    width: 80vw;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.plan {
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 20px 25px 20px;
+}
+
+.itens {
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto 80px auto;
+    padding: 0 0 0 20px;
+    text-align: left;
+}
+
+li {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.grid-novidades {
+    margin-top: 60px;
+}
+
+.novidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: auto;
+    gap: 45px;
+    width: 60vw;
+    height: 60vh;
+    object-fit: cover;
+}
+
+
+@media (max-width: 990px) {
+	.novidades {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        margin: auto;
+        gap: 45px;
+        width: 60vw;
+        height: 60vh;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 895px) {
+	.novidades {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        margin: auto;
+        gap: 45px;
+        width: 80vwpx;
+        height: 60%;
+        object-fit: cover;
+    }
+}
+
+
+.imagem-1 {
+    background: url('./img/hbo-default_0.webp');
+    background-size: cover;
+    width: 100%;
+    border-radius: 10px;
+    transition: .8s ease-out;
+    border: 2px solid purple;
+}
+
+.imagem-1:hover {
+    background: url('./img/hbo-2.webp');
+    background-size: cover;
+    transform: scale(1.08);
+    border: 3px solid white;
+}
+
+.imagem-2 {
+    background: url('./img/MAX-0.webp');
+    background-size: cover;
+    width: 100%;
+    border-radius: 10px;
+    transition: .8s ease-out;
+    border: 2px solid purple;
+}
+
+
+.imagem-2:hover {
+    background: url('./img/MAX-1.webp');
+    background-size: cover;
+    transform: scale(1.08);
+    border: 3px solid white;
+}
+
+.imagem-3 {
+    background: url('./img/MAX-1.webp');
+    background-size: cover;
+    width: 100%;
+    border-radius: 10px;
+    transition: .8s ease-out;
+    border: 2px solid purple;
+}
+
+
+.imagem-3:hover {
+    background: url('./img/MAX-0.webp');
+    background-size: cover;
+    transform: scale(1.08);
+    border: 3px solid white;
+}
+
+.imagem-4 {
+    background: url('./img/hbo-2.webp');
+    background-size: cover;
+    width: 100%;
+    border-radius: 10px;
+    transition: .8s ease-out;
+    border: 2px solid purple;
+}
+
+
+.imagem-4:hover {
+    background: url('./img/hbo-default_0.webp');
+    background-size: cover;
+    transform: scale(1.08);
+    border: 3px solid white;
+}
+.imagem-5 {
+    background: url('./img/MAX-1.webp');
+    background-size: cover;
+    width: 100%;
+    border-radius: 10px;
+    transition: .8s ease-out;
+    border: 2px solid purple;
+}
+
+
+.imagem-5:hover {
+    background: url('./img/MAX-0.webp');
+    background-size: cover;
+    transform: scale(1.08);
+    border: 3px solid white;
+}
+.imagem-6 {
+    background: url('./img/hbo-default_0.webp');
+    background-size: cover;
+    width: 100%;
+    border-radius: 10px;
+    transition: .8s ease-out;
+    border: 2px solid purple;
+}
+
+
+.imagem-6:hover {
+    background: url('./img/hbo.png');
+    background-size: cover;
+    transform: scale(1.08);
+    border: 3px solid white;
+}
+
+.rodape {
+    height: 250px;
+    width: 100%;
+    text-align: center;
+    color: white;
+
+    padding: 50px;
+    margin-top: 50px;
 }
